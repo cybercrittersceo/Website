@@ -1,0 +1,598 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --light-blue: #87ceeb;
+  --light-blue-dark: #5eb8e6;
+  --yellow: #ffd700;
+  --yellow-dark: #e6c200;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #ffffff;
+  color: #333333;
+  line-height: 1.5;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* NAVBAR */
+.navbar {
+  background: var(--light-blue);
+  border-bottom: 3px solid var(--yellow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  position: relative;
+}
+
+.nav-brand {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-brand img {
+  height: 64px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--yellow-dark);
+}
+
+/* HERO SECTION */
+.hero {
+  background-image: url("images/contact-banner.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 4.5rem 0;
+  min-height: 260px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  z-index: 0;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  z-index: 2;
+}
+
+/* TITLE BELOW BANNER */
+.banner-title-section {
+  background: #f5d442;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.mission-banner-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.banner-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #1a1a1a;
+  margin: 0;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.hero-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-icon {
+  width: 80px;
+  height: 80px;
+  background: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0a2540;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+.logo-text {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0;
+  font-family: Georgia, serif;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* INTRO TAGLINE */
+.intro-tagline {
+  background: #ffffff;
+  padding: 2.5rem 0;
+  text-align: center;
+}
+
+.intro-tagline-heading {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #666666;
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.intro-tagline-mission {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* SERVICES SECTION */
+.services-section {
+  background: #e8f4fc;
+  padding: 2rem 0 3rem;
+  min-height: auto;
+  display: flex;
+  align-items: center;
+}
+
+.services-grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 3rem;
+  column-gap: 3.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.service-card {
+  text-align: center;
+  padding: 1.25rem;
+  border: 2px solid var(--light-blue);
+  border-radius: 12px;
+  background: #e9f7ff; /* light blue inside */
+}
+
+.service-card:nth-child(2),
+.service-card:nth-child(3) {
+  border-color: var(--yellow);
+  background: #fff9cc; /* light yellow inside */
+}
+
+.service-image-wrapper {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  /* Opposite of the box color by default (blue boxes -> yellow circles) */
+  border: 4px solid var(--yellow);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+  padding: 8px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Yellow boxes (2,3) should have light-blue circles */
+.service-card:nth-child(2) .service-image-wrapper,
+.service-card:nth-child(3) .service-image-wrapper {
+  border-color: var(--light-blue);
+}
+
+.service-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 0.5rem;
+}
+
+.service-card p {
+  font-size: 0.9rem;
+  color: #666666;
+  line-height: 1.5;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+/* READY SECTION */
+.ready-section {
+  background: #ffffff;
+  padding: 3rem 0;
+}
+
+.ready-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.ready-inner h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.ready-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.btn-contact {
+  background: #4a90e2;
+  color: #ffffff;
+  padding: 0.9rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.btn-contact:hover {
+  background: #357abd;
+}
+
+.yellow-stroke-large {
+  width: 200px;
+  height: 12px;
+  background: linear-gradient(90deg, #ffd700 0%, #ffed4e 100%);
+  border-radius: 6px;
+  position: absolute;
+  right: -50px;
+  z-index: 1;
+}
+
+/* MISSION SECTION */
+.mission-section {
+  background: #ffffff;
+  padding: 4rem 0;
+}
+
+.section-title-large {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.mission-item {
+  text-align: center;
+}
+
+.mission-icon {
+  width: 80px;
+  height: 80px;
+  background: #ffd700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+
+.mission-item h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.mission-item p {
+  font-size: 0.95rem;
+  color: #666666;
+  line-height: 1.8;
+}
+
+/* BANNER SECTION */
+.banner-section {
+  background: linear-gradient(135deg, #0f4c75 0%, #1a5f8f 100%);
+  padding: 3rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-section::before,
+.banner-section::after {
+  content: "01001001 01001000 01000001 01000011 01001011";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+  color: rgba(255, 255, 255, 0.1);
+  font-family: monospace;
+  font-size: 0.8rem;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  line-height: 1.5;
+}
+
+.banner-section::before {
+  left: 0;
+}
+
+.banner-section::after {
+  right: 0;
+}
+
+.banner-section p {
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* WHY SECTION */
+.why-section {
+  background: #ffffff;
+  padding: 4rem 0;
+}
+
+.why-list {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.why-item {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  align-items: flex-start;
+}
+
+.checkmark {
+  width: 40px;
+  height: 40px;
+  background: #22c55e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.why-content h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.why-content p {
+  font-size: 0.95rem;
+  color: #666666;
+  line-height: 1.7;
+}
+
+/* FLOATING BUTTONS */
+/* FOOTER */
+.footer {
+  background: var(--yellow);
+  border-top: 2px solid var(--light-blue);
+  padding: 0.75rem 0;
+  text-align: center;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-email-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.footer-brand {
+  color: #1a1a1a;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+  color: var(--yellow-dark);
+}
+
+.social-icon {
+  display: block;
+  height: 16px;
+  max-height: 16px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* RESPONSIVE */
+@media (max-width: 968px) {
+  .services-grid-2x2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .mission-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .services-grid-2x2 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .service-image-wrapper {
+    width: 140px;
+    height: 140px;
+  }
+  .service-image {
+    border-radius: 50%;
+  }
+
+  .mission-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ready-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .yellow-stroke-large {
+    display: none;
+  }
+
+}
